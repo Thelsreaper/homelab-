@@ -1,0 +1,50 @@
+# Servicios
+
+
+## Gaming Service
+
+Descripción:
+
+Servidor dedicado para juegos utilizando Docker.
+
+
+Tecnología:
+
+- Docker
+- Java
+- steamcmd
+
+
+Ubicación:
+
+VM Ubuntu
+
+
+Puerto:
+
+25565/TCP
+8211/TCP
+
+
+---
+
+
+# Wazuh
+
+Descripción:
+
+Plataforma SIEM para monitoreo de seguridad.
+
+
+Componentes:
+
+- Wazuh Manager
+- Indexer
+- Dashboard
+
+
+Funciones:
+
+- Análisis de logs
+- Detección de amenazas
+- Monitoreo de agentes
