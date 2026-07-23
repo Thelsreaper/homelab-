@@ -1,0 +1,73 @@
+# Seguridad
+
+
+## Acceso
+
+
+Método:
+
+SSH
+
+
+Medidas:
+
+- Autenticación por claves
+- Usuarios separados
+
+
+## Firewall
+
+
+Herramienta:
+
+UFW
+
+
+Reglas:
+
+
+Permitir:
+
+SSH:
+22/TCP
+
+
+8211/TCP
+25565/TCP
+
+
+Bloquear:
+
+Puertos innecesarios
+
+
+
+## Monitorización
+
+
+Herramientas:
+
+- Wazuh
+- Suricata
+
+
+Objetivo:
+
+Detectar:
+
+- Intentos de acceso
+- Cambios de archivos
+- Actividad sospechosa
+
+
+
+## Backups
+
+
+Plan:
+
+Backup semanal de:
+
+- Configuraciones Docker
+- Máquinas virtuales
+- Archivos importantes
