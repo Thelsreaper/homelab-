@@ -1,0 +1,40 @@
+# Nodo 2 - Servidor Minecraft
+
+## Objetivo
+
+Este nodo está dedicado al alojamiento de servidores de Minecraft con modpacks de CurseForge.
+
+## Sistema Operativo
+
+- Ubuntu Server 24.04 LTS
+
+## Software utilizado
+
+- Java
+- Minecraft Dedicated Server
+- NeoForge / Forge (según el modpack)
+- CurseForge Modpack
+- WinSCP
+
+## Funciones
+
+- Servidor de Minecraft
+- Carga automática de modpacks
+- Copias de seguridad
+- Actualización del servidor
+- Monitoreo de rendimiento
+
+## Recursos
+
+- CPU: 10
+- RAM: 10
+- Disco: 100
+
+## Documentación
+
+- Instalación de Java
+
+  # sudo apt update
+  # sudo apt install openjdk-21-jdk -y
+  # java -version
+
