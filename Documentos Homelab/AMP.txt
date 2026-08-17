@@ -1,0 +1,20 @@
+	AMP 
+Es un panel web de gestión y orquestación de servidores de videojuegos. Permite la creación, 
+despliegue y administración automatizada de múltiples instancias de servidores (como Minecraft,ARK, etc.)
+a través de plantillas preconfiguradas.
+
+Fue implementado para centralizar el ocio y hosting de videojuegos dentro de la red local/remota,
+facilitando la configuración de archivos, automatización de copias de seguridad, 
+gestión de usuarios/permisos y el monitoreo en tiempo real del uso de recursos (CPU, RAM y espacio en disco).
+------------------------------------------------------------------------------
+
+ Ficha tecnica 
+ 
+ version
+ Dependencia: lxc Debian 
+ SO Base: PROMOX v8
+
+------------------------------------------------------------------------------ 
+
+ ------------Instalacion de AMP -----------------
+   bash <(curl -fsSL getamp.sh)

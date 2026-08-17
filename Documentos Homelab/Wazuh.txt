@@ -1,0 +1,34 @@
+ Wazuh
+ Es una plataforma de seguridad de código abierto orientada a la detección de amenazas, 
+monitoreo de integridad de archivos (FIM), gestión de vulnerabilidades y respuesta ante 
+incidentes. Se encarga de supervisar, analizar logs y evaluar el estado de seguridad de 
+los contenedores, máquinas virtuales y hosts del servidor.
+
+Fue implementado con fines educativos y de laboratorio práctico para aprender en ciberseguridad,
+automatización de respuesta, análisis de eventos e implementación de cultura de defensa de red
+y monitoreo centralizado.
+------------------------------------------------------------------------------
+
+ Ficha tecnica 
+ 
+ version
+ Dependencia: VM + Docker
+ SO Base: PROMOX v8
+
+------------------------------------------------------------------------------ 
+
+ -----------Instalacion de wazuh con docker compose-------------
+
+ git clone https://github.com/wazuh/wazuh-docker.git
+ cd wazuh-docker
+ cd single-node
+ ls
+ chmod +x generate-indexer-certs.sh
+ ./generate-indexer-certs.sh
+ docker compose up -d
+ docker ps
+
+
+
+
+

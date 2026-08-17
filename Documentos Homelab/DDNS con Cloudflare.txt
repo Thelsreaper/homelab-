@@ -1,0 +1,64 @@
+	DDNS
+Este servicio se encarga de revisar periódicamente (cada 5 minutos) si la dirección IP pública
+de la red ha cambiado. En caso de detectar un cambio, actualiza automáticamente los registros
+DNS vinculados al dominio/subdominio personal.
+
+Fue implementado debido a que la conexión de red no cuenta con una IP pública estática (fija), 
+permitiendo así mantener el acceso remoto a los servicios autoalojados de manera ininterrumpida
+ a través de un nombre de dominio en lugar de depender de una IP cambiante.
+------------------------------------------------------------------------------
+
+ Ficha tecnica 
+ 
+ version
+ Dependencia: VM + Docker
+ SO Base: PROMOX v8
+
+------------------------------------------------------------------------------ 
+
+ ----Instalacion de Docker------------------
+ 
+ sudo apt update 
+ sudo apt upgrade -y
+
+ sudo apt install -y ca-certificates curl gnupg lsb-release
+ sudo install -m 0755 -d /etc/apt/keyrings
+ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | \
+ sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+ sudo chmod a+r /etc/apt/keyrings/docker.gpg
+ 
+ echo \
+ "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] \
+ https://download.docker.com/linux/ubuntu \
+ $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+ sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+ sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+ docker --version (Se ejecuta para saber si se instalo docker)
+ sudo systemctl status docker
+
+ ---Instalacion del DDNS de cloudflare----------------
+
+ mkdir -p ~/docker/cloudflare-ddns
+ cd ~/docker/cloudflare-ddns
+ nano docker-compose.yml
+
+      services:
+  cloudflare-ddns:
+    image: favonia/cloudflare-ddns:latest
+    container_name: cloudflare-ddns
+    network_mode: host
+    restart: unless-stopped
+
+    environment:
+      CLOUDFLARE_API_TOKEN: ${CLOUDFLARE_API_TOKEN}
+      DOMAINS: >
+         "Aqui colocas tus dominios que quieras que cambie junto a tu ip publica" 
+      PROXIED: "false"
+      IP6_PROVIDER: none
+      UPDATE_CRON: "@every 5m"
+
+ nano .env
+      CLOUDFLARE_API_TOKEN="Tu token de cloudflare"
+
+ docker compose up -d

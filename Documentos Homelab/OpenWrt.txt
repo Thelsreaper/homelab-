@@ -1,0 +1,82 @@
+Modelo de Router : TL-MR3420 v5
+
+entrar en la pagina oficial de OpenWrt y descargar el firmware correcto para mi dispocitivo 
+al descargarlo se le cambia el nombre a "tp_recovery.bin"  guardarlo en una carpeta vacia 
+conectar el router al PC en la entrada LAN y configuramos nuestra ip ethernet a estatica 
+con la siguiente dirrecion 
+IP: 192.168.0.225
+mask: 255.255.255.0
+gateway y dns vacios 
+
+Instalar un servidor TFTP en mi caso use Tftpd64 
+donde al abrirlo hay que seleccionar en server interface el que dice 192.168.0.225
+y que el directorio sea el mismo donde guardamos en "tp_recovery.bin"
+
+pasos para poner el routern en modo TFTP
+
+Apaga el TL-MR3420.
+Mantén presionado el botón RESET.
+Sin soltar RESET, enciende el router.
+Mantén RESET aproximadamente 6–7 segundos.
+El router debería comenzar a solicitar tp_recovery.bin al servidor TFTP.
+
+una vez hecho todo eso cambiamos nuestra ip otra vez a dinamica y entramos al 
+navegador sin estar conectado a internet y poner la ip 192.168.1.1
+
+------------------------Ahora pasamos a configurar el router con el nuevo software---------------------------
+
+cambiamos la contraseña del dispocitivo porque a iniciar por primera vez no tendra ninguna 
+nos dirigimos a:
+System --> administration ->Router Password
+ahi cambiamos la contraseña para luevo activar el ssh entrando a 
+
+System --> administration -> SSH Access
+-------------------------------------------------------
+Enable Instance
+
+Interface
+lan: Bridge: "br-lan"
+Allow root logins with password: False
+Allow the root user to log in with password: False
+-------------------------------------------------------
+Luego nos movemos al apartado de SSH-Keys
+ahi tenemos que generar nuestra clave ssh en el cmd o terminal 
+utilizamos el "ssh-keygen -t ed25519"
+
+ssh-keygen → programa que genera claves SSH.
+-t ed25519 → indica que quieres usar el algoritmo Ed25519, que es moderno y rápido.
+
+al generarlo no entrega una clave publica y otra privada usaremos la publica que es la que 
+tiene terminacion .pub esa misma la pegaremos en SSH-Keys 
+
+----------------------Creacion de vlans y sus configuraciones-----------------------------
+
+Para crear una vlan nos dirigimos a 
+Network -> Switch
+
+
+adjuntar imagen de vlans 
+
+
+
+
+
+
+
+
+
+----------------------Creacion de interfaces y sus configuraciones-----------------------------
+
+Para crear las nuevas interfaces o solamente configurarlas no dirigimos a 
+Network -> interfaces 
+ahi nos dirigimos donde dice "add new interface" 
+ahi nos pedira el nombre de la interfaz, protocolo y device
+por el momento completamos las primeras 2 por ejemplo
+Administracion
+static address 
+ipv4 : 192.168.10.1/24
+
+
+adjuntar ejemplo 
+
+----------------------Creacion de reglas de firewall y otros -----------------------------
