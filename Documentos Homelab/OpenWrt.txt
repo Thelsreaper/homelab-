@@ -55,7 +55,7 @@ Para crear una vlan nos dirigimos a
 Network -> Switch
 
 
-<img src="" width="700">
+<img src="Imagenes Lab/VLans.png" width="700">
 
 
 
