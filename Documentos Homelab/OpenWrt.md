@@ -54,7 +54,7 @@ tiene terminacion .pub esa misma la pegaremos en SSH-Keys
 Para crear una vlan nos dirigimos a 
 Network -> Switch
 
- https://github.com/Thelsreaper/homelab-/blob/0c016cd5dc4b7133abed48d22aec6016b115008a/Imagenes%20Lab/VLans.png
+![Vlans](https://github.com/Thelsreaper/homelab-/blob/0c016cd5dc4b7133abed48d22aec6016b115008a/Imagenes%20Lab/VLans.png)
 
 
 
