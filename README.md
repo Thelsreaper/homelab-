@@ -1,7 +1,7 @@
 # homelab
 Infraestructura de laboratorio doméstico basada en Proxmox, Docker, redes, seguridad y servicios autoalojados.
 Repositorio de documentación y configuración de mi laboratorio doméstico.
- ![image alt](https://github.com/Thelsreaper/homelab-/blob/0c016cd5dc4b7133abed48d22aec6016b115008a/Imagenes%20Lab/VLans.png)
+
 ## Objetivo
 
 El principal objetivo de este proyecto es intentar simular infrestructura a nivel empresaria contando con pocos recursos donde principalmente practicare:
